@@ -8,7 +8,7 @@ gem 'rails', '3.0.6'
 gem 'sqlite3'
 
 group :production do
-  gem 'mysql'
+ gem 'mysql'
 end
 
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
