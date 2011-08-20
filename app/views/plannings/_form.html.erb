@@ -1,0 +1,12 @@
+<%= form.label :name %></br>
+<%= form.text_field :name %></br>
+<%= form.label :description %></br>
+<%= form.text_area :description, :rows => 2 %></br>
+<%= form.label :start_date %><br />
+<%= form.text_field :start_date, :class=>"start_date_input_date" %><br />
+<%= form.label :end_date %><br />
+<%= form.text_field :end_date, :class=>"end_date_input_date" %><br />
+
+<% if !@area.nil? %>
+<%= hidden_field_tag :area_name, @area.name %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Editing planning <%= @planning.name  %></h1>
+
+<div id="errors_list"></div>
+<%= form_for @planning, :remote=>true do |f| %>
+  		<%= render :partial => "form", :object => f %>
+		</br>
+  		<%= f.submit "Guardar cambios" %>
+<% end %>

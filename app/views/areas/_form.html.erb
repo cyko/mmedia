@@ -1,0 +1,12 @@
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= label_tag 'coordinadores'%>
+<%= form.autocomplete_field :project_leaders,autocomplete_user_login_areas_path, :'data-delimiter' => ', ', :size=>48 %></br>
+</br>
+<%= form.label :description %>
+<%= form.text_field :description, :size=>92 %>
+<% if !@area.nil? && !@area.parent_id.nil? %>
+<%= hidden_field_tag :parent_id, @area.parent_id %>
+<% end %>
+</br> 
+

@@ -1,0 +1,17 @@
+<li>
+<%= div_for(area_member) do %>
+  <%= link_to area_member.name, new_members_area_path(area_member), :remote => true %>
+<% end %>  
+<!--
+FIXME tendría que mostrar este tag <ul>...</ul> sólo si el área tiene al menos una subárea.
+Si lo hago de esa manera, luego en el momento de agregar una subárea no se muestra ya que no se encuentra
+el id "subareas_N":
+Solución 1: se muestra siempre la lista (junto con esto la imagen del + al lado del área) aunque no haya subáreas.
+Solución 2: se maneja este tema en el archivo create.js.erb cuando se está agregando una nueva subárea.
+
+Creo que la correcta es la Solución 2 pero opto en este momento por la solución 1 por ser la más simple.
+-->
+	<ul id="members_<%=area_member.id.to_s%>" >
+	<%= render :partial => "/users/user", :collection => get_members(area_member), :locals => {:area => area_member} %>
+  	</ul>	
+</li>

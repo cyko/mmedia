@@ -1,0 +1,7 @@
+$('#content').empty();
+$('#content').append("<%= escape_javascript(render 'members') %>"); // Insert the _user partial at the bottom of the users list
+$("#navigation").treeview({
+		persist: "location",
+		collapsed: true,
+		unique: true
+	});

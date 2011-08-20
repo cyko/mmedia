@@ -1,0 +1,26 @@
+<% field_set_tag 'Iniciar sesión', :class=>'login' do %>
+
+<% form_for @user_session, :url => user_session_path do |f| %>
+
+  <%= render :partial => "layouts/error_list", :collection => @user_session.errors.full_messages %> 
+
+<table>
+ <TR>
+	<TD><%= f.label "Usuario" %></TD>
+	<TD><%= f.text_field :login %><br /></TD>
+ </TR>
+ <TR>
+	<TD><%= f.label "Contraseña" %></TD>
+	<TD><%= f.password_field :password %><br /></TD>
+ </TR>
+ <TR>
+	<TD></TD>
+	<TD><%= f.check_box :remember_me %><%= f.label :remember_me %><br /></TD>
+ </TR>
+</table>
+
+  
+  <br />
+  <%= f.submit "Entrar" %>
+<% end %>
+<% end %>

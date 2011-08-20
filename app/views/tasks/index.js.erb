@@ -1,0 +1,7 @@
+$('#content').empty();
+$('#content').append("<%= escape_javascript(render 'index') %>"); // Insert the _index partial
+$("#navigation").treeview({
+		persist: "location",
+		collapsed: true,
+		unique: true
+	});

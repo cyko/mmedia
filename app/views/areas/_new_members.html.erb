@@ -1,0 +1,8 @@
+<h1>Nuevos miembros para <%= @area.name  %></h1>
+<div id="errors_list"></div>
+<%= form_for @area, :url => add_members_area_path(@area), :remote=>true do |f| %>
+    <%= label_tag 'Nuevos miembros'%>
+    <%= f.autocomplete_field :members, autocomplete_user_login_areas_path, :'data-delimiter' => ', ', :size=>48 %></br>
+    </br>
+  	<%= f.submit "Agregar miembros" %>
+<% end %>

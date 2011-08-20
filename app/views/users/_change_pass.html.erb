@@ -1,0 +1,10 @@
+<h1>Cambiar Contraseña</h1>
+
+<% form_for @user, :url => account_path do |f| %>
+
+  <%= render :partial => "layouts/error_list", :collection => @user.errors.full_messages %>
+
+  <%= render :partial => "form_change_pass", :object => f %>
+
+  <%= f.submit "Update" %>
+<% end %>

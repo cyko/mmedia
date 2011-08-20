@@ -1,0 +1,19 @@
+<li>
+<%= div_for(area) do %>
+  <em><%= area.name %></em>
+<% end %>  
+<!--
+FIXME tendría que mostrar este tag <ul>...</ul> sólo si el área tiene al menos una planificación.
+Si lo hago de esa manera, luego en el momento de agregar una planificación no se muestra ya que no se encuentra
+el id "plannings_N":
+Solución 1: se muestra siempre la lista (junto con esto la imagen del + al lado del área) aunque no haya planificaciones.
+Solución 2: se maneja este tema en el archivo create.js.erb cuando se está agregando una nueva planificación.
+
+Creo que la correcta es la Solución 2 pero opto en este momento por la solución 1 por ser la más simple.
+-->
+	<ul id="plannings_<%=area.id.to_s%>" >
+		<div id="navigation">
+			<%= render :partial => "planning", :collection => area.plannings %>
+		</div>
+  	</ul>	
+</li>

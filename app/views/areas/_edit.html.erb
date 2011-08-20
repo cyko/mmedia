@@ -1,0 +1,19 @@
+<h1>Editing area <%= @area.name  %></h1>
+<div id="errors_list"></div>
+</br>
+
+<%= form_for @area, :remote=>true do |f| %>
+  		<%= render :partial => "form", :object => f %>
+		</br>
+  		<%= f.submit "Guardar cambios" %>
+<% end %>
+</br>
+
+<% if @area.parent_id.nil? %>
+<%= link_to "Nueva subarea", new_area_child_path(@area.id), :remote => true %>
+<div id="subarea_form"></div>
+<% end %>
+
+
+
+

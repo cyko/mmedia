@@ -1,0 +1,2 @@
+$('#members_<%=@area.id%>').append("<%= escape_javascript(render :partial=>'/users/user', :collection=>@added_members, :locals => {:area => @area}) %>");
+$('#area_members').val("");

@@ -1,0 +1,8 @@
+$('#content').empty();
+$('#content').append("<%= escape_javascript(render 'index') %>"); // Insert the _planning partial at the bottom of the users list
+$("#navigation").treeview({
+		persist: "location",
+		collapsed: true,
+		unique: true
+	});
+$(".start_date_input_date, .end_date_input_date").datepicker();

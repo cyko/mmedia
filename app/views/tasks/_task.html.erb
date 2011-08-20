@@ -1,0 +1,20 @@
+<% if task_for_project_leaders  %>
+
+	<li>
+	<%= div_for(task) do %>
+	<%= link_to task.name, edit_task_path(task), :remote => true %>
+	<%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+	<% end %> 
+	</li>
+
+<% else %>
+
+	<%= show_to :development, :of => task do %>
+	<li>
+	<%= div_for(task) do %>
+	<%= link_to task.name, task, :remote => true %>
+	<% end %> 
+	</li>
+	<% end %>
+
+<% end %>

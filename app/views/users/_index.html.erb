@@ -1,0 +1,20 @@
+<div id="content_left">
+
+<h1>Usuarios del sistema</h1>
+
+<p>Login</p>
+
+<div id="users">
+  <%= render :partial => "user", :collection => @users %>
+</div>
+
+</div>
+
+<div id="content_right">
+	<h1>Agregar nuevo usuario</h1>
+	<div id="errors_list"></div>
+	<%= form_for User.new, :remote=>true do |f| %>
+  		<%= render :partial => "users/form", :object => f %>
+  		<%= f.submit "Agregar usuario" %>
+	<% end %>
+</div>

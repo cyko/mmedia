@@ -1,0 +1,7 @@
+<h1>Nueva tarea para <%= @planning.name%></h1>
+	<div id="errors_list"></div>
+	<%= form_for @task, :remote=>true do |f| %>
+  		<%= render :partial => "form", :object => f %>
+		</br>
+  		<%= f.submit "Agregar tarea" %>
+<% end %>

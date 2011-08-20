@@ -1,0 +1,14 @@
+$('#errors_list').empty();
+<% if @errors.empty? and @planning.valid?  %>
+   $('#plannings_<%=@planning.area_id%>').append("<%= escape_javascript(render :partial=>'planning', :object=>@planning) %>")
+
+   $('#planning_name').val(""); // Clear the form login text field
+   $('#planning_description').val(""); // Clear the form email text field
+   $('#planning_area_name').val(""); // Clear the form area_name text field
+   $('#planning_start_date').val("");
+   $('#planning_end_date').val("");
+
+<% else %>
+    $('#errors_list').html("<%= escape_javascript( pluralize(@planning.errors.count + @errors.size , "error") + " prohibited this planning from being saved: " )%>");
+	$('#errors_list').append("<%= escape_javascript(render :partial => "layouts/error_list", :collection => @planning.errors.full_messages + @errors) %>"); // Insert the _user partial at the bottom of the users list
+<% end %>

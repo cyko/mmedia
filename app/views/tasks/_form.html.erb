@@ -1,0 +1,26 @@
+<%= form.label :name %><br />
+<%= form.text_field :name, :disabled=>!task_for_project_leaders %><br />
+</br>
+
+<%= form.label :description %><br />
+<%= form.text_area :description, :rows => 2, :disabled=>!task_for_project_leaders %><br />
+<br />
+
+<%= form.label :comment %><br />
+<%= form.text_area :comment, :rows => 2 %><br />
+<br />
+
+<% if task_for_project_leaders %>
+<%= label_tag 'Asignar a:'%>
+<%= autocomplete_field_tag :developments, @developments, autocomplete_user_login_areas_path, :'data-delimiter' => ', ', :size=>48 %></br>
+<br />
+<% end %>
+
+<%= form.check_box :completed, :disabled=>task_for_project_leaders %>
+<%= form.label :completed, :disabled=>task_for_project_leaders %>
+
+<% if !@planning.nil? %>
+<%= hidden_field_tag :planning, @planning.name %>
+<% end %>
+<br />
+

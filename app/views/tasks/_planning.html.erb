@@ -1,0 +1,14 @@
+<li>
+<%= div_for(planning) do %>
+	<% if task_for_project_leaders %>
+		<%= link_to planning.name, new_planning_task_path(planning.id), :remote => true %>
+	<% else %>
+		<em><%= planning.name %></em>
+	<% end %>
+
+<% end %> 
+
+	<ul id="tasks_<%=planning.id.to_s%>" >
+			<%= render :partial => "task", :collection => planning.tasks %>
+  	</ul>
+</li>

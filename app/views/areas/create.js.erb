@@ -1,0 +1,18 @@
+$('#errors_list').empty();
+<% if @area.valid? and @errors.empty? %>
+   <% if @area.parent_id? %>
+	//En este caso se creo un subarea
+	$('#subareas_<%=@area.parent_id%>').append("<%= escape_javascript(render :partial=>'subarea', :object=>@area) %>")
+    $('#subarea_form').empty();
+   <% else %>
+	//En este caso se creo un área	
+	$('#areas').append("<%= escape_javascript(render @area) %>"); // Insert the _user partial at the bottom of the users list
+	$('#area_name').val(""); // Clear the form login text field
+	$('#area_description').val(""); // Clear the form email text field
+    $('#project_leaders').val(""); // Clear the form project_leaders text field
+   <% end %>
+<% else %>
+    $('#errors_list').html("<%= escape_javascript( pluralize(@area.errors.count + @errors.size , "error") + " prohibited this area from being saved: " )%>");
+	$('#errors_list').append("<%= escape_javascript(render :partial => "layouts/error_list", :collection => @area.errors.full_messages + @errors) %>"); // Insert the _user partial at the bottom of the users list
+<% end %>
+

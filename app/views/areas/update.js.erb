@@ -1,0 +1,7 @@
+$('#errors_list').empty();
+<% if @errors.empty? and @area.valid? %>
+    $('#errors_list').html("<%= escape_javascript( " Las modificaciones se guardaron correctamente " )%>");
+<% else %>
+    $('#errors_list').html("<%= escape_javascript( pluralize(@area.errors.count + @errors.size , "error") + " prohibited this area from being saved: " )%>");
+	$('#errors_list').append("<%= escape_javascript(render :partial => "layouts/error_list", :collection => @area.errors.full_messages + @errors) %>"); // Insert the _user partial at the bottom of the users list
+<% end %>

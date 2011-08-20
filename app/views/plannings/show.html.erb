@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @planning.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @planning.description %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @planning.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @planning.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_planning_path(@planning) %> |
+<%= link_to 'Back', plannings_path %>

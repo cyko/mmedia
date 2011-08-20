@@ -1,0 +1,13 @@
+$('#errors_list').empty();
+<% if @errors.empty? and @task.valid?  %>
+   $('#tasks_<%=@task.planning_id%>').append("<%= escape_javascript(render :partial=>'task', :object=>@task) %>")
+	
+   $('#task_name').val(""); // Clear the form login text field
+   $('#task_description').val(""); // Clear the form email text field
+   $('#task_comment').val(""); // Clear the form email text field
+   $('#developments').val(""); // Clear the form area_name text field
+   
+<% else %>
+    $('#errors_list').html("<%= escape_javascript( pluralize(@task.errors.count + @errors.size , "error") + " prohibited this planning from being saved: " )%>");
+	$('#errors_list').append("<%= escape_javascript(render :partial => "layouts/error_list", :collection => @task.errors.full_messages + @errors) %>");
+<% end %>

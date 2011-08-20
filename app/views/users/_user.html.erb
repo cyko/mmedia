@@ -1,0 +1,9 @@
+<%= div_for(user) do %>
+  <em><%= user.login %></em> 
+  <%= show_to :administrator do %>
+  <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+  <% end %>
+  <%= show_to :project_leader do %>
+  <%= link_to 'Desvincular', { :controller => 'areas', :action => 'remove_members', :id => area.id, :user_id => user.id }, :confirm => 'Are you sure?', :remote=>true %>
+  <% end %>
+<% end %>

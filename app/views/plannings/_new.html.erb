@@ -1,0 +1,7 @@
+<h1>Nueva planificacion para <%= @area.name%></h1>
+	<div id="errors_list"></div>
+	<%= form_for @planning, :remote=>true do |f| %>
+  		<%= render :partial => "form", :object => f %>
+		</br>
+  		<%= f.submit "Agregar planificación" %>
+<% end %>
