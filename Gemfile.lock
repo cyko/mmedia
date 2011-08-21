@@ -117,4 +117,3 @@ DEPENDENCIES
   rails3-jquery-autocomplete (~> 0.6.0)
   sqlite3
   win32-clipboard (~> 0.5.2)
-  
