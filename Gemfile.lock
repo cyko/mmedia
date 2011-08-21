@@ -111,9 +111,9 @@ DEPENDENCIES
   acl9
   acts_as_tree (~> 1.2.3)!
   authlogic!
+  capistrano
   nested_form
   rails (= 3.0.6)
   rails3-jquery-autocomplete (~> 0.6.0)
   sqlite3
   win32-clipboard (~> 0.5.2)
-  capistrano
