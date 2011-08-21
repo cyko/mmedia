@@ -12,8 +12,7 @@ body {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 12px;
 	color: #616161;
-	width: 1200px;
-	
+	width: 1130px;
 }
 
 h1, h2, h3 {
@@ -60,16 +59,9 @@ img.right {
 	margin: 0 0 0 20px;
 }
 
-#header {
-	/*width: 1130px;*/
-	height: 150px;
-	background: url(/images/img02.jpg);
-}
-
 /* Header */
-
 #logo {
-	/*width: 1130px;*/
+	width: 1130px;
 	height: 100px;
 	margin: 0;
 	padding: 0 0px 0 70px;
@@ -110,7 +102,7 @@ img.right {
 /* Menu */
 
 #menu {
-	/*width: 1200px;*/
+	width: 1200px;
 	margin: 0;
 	padding: 0;
 	height: 50px;
