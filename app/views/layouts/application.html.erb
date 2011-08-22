@@ -39,6 +39,7 @@
 					<li><%= link_to "Cambiar contraseña", change_pass_account_path, :remote=>true %></li>
 				</ul>
 				</li>
+
 				<%if current_user.has_role?(:administrator) || current_user.has_role?(:project_leader) %>
 				<li>
 				<h2>Administrar</h2>
@@ -56,7 +57,15 @@
 				</ul>
 				</li>
  				<%end%>
-         
+				
+         		<%if current_user.has_role?( :member )%>
+				<li>
+				<h2>Tareas</h2>
+				<ul>
+					<li><%= link_to "Tareas pendientes", index_member_tasks_path, :remote=>true %></li>
+				</ul>
+				</li>
+				<% end %>
 			</ul>
 			<%end%>
     </div>
