@@ -1,6 +1,6 @@
 <%= div_for(user) do %>
   <em><%= user.login %></em> 
-  <%if current_user.has_role?(:administrator) %>
+  <%if current_user.has_role?(:administrator) && !user.has_role?(:administrator) %>
   <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
   <% end %>
   <%if current_user.has_role?(:project_leader)%>
