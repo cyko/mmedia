@@ -123,7 +123,8 @@ class AreasController < ApplicationController
     @errors = []
     
     #Me fijo que haya seleccionado al menos un coordinador válido para el área.
-    if !project_leaders_valid?(@area.project_leaders.split(%r{,\s*})) 
+    @project_leaders = @area.project_leaders.split(%r{,\s*})
+    if !project_leaders_valid?(@project_leaders) 
         @errors = @errors.concat(["Debe seleccionar un coordinador válido para el área " + @area.name])
     end
     
