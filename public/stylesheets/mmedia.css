@@ -223,10 +223,6 @@ img.right {
 	
 }
 
-#sidebar2 {
-	float: right;
-}
-
 .sidebar {
 	width: 220px;
 	padding: 0;
@@ -268,12 +264,6 @@ img.right {
 }
 
 .sidebar a {
-}
-
-
-#actions {
-	float: right;
-	
 }
 
 #content_left {
