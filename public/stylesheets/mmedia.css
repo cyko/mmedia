@@ -12,7 +12,7 @@ body {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 12px;
 	color: #616161;
-	
+	width: 1200px;
 }
 
 h1, h2, h3 {
@@ -60,7 +60,7 @@ img.right {
 }
 /* Header */
 #logo {
-	width: 1130px;
+	/*width: 1130px;*/
 	height: 100px;
 	margin: 0;
 	padding: 0 0px 0 70px;
@@ -91,19 +91,9 @@ img.right {
 	font-size: 10px;
 	color: #110E0F;
 }
-
-#logo a {
-	border: none;
-	text-decoration: none;
-	color: #8C0209;
-}
-
 /* Menu */
 
 #menu {
-	width: 1200px;
-	margin: 0;
-	padding: 0;
 	height: 50px;
 	background: url(/images/img02.jpg);
 }
@@ -136,73 +126,23 @@ img.right {
 	color: #FFFFFF;
 }
 
-#menu .current_page_item a {
-	color: #FFFFFF;
-}
-
-#s {
-	margin: 0px 0px 0 0px;
-	padding: 0px 0px;
-	width: 200px;
-	height: 18px;
-	border: 1px solid #CA8186;
-	background: #FFFFFF;
-	font-size: 10px;
-	color: #000000;
-}
-
-#x {
-	margin: 0;
-	padding: 2px 5px;
-	height: 25px;
-	background: #CA8186;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	color: #CCCCCC;
-}
-
-/* Wrapper */
-
-#wrapper {
-	height: 100%;
-}
-
-#wrapper1 {
-	height: 100%;
-}
-
 /* Page */
 
 #page {
-	width: 1200px;
+	/*width: 1200px;*/
 	background: #FFFFFF;
 	min-height: 400px;
     height: auto !important;
-}
-
-#page-bg {
-}
-
-/* Latest Post */
-
-#latest-post {
-	padding: 20px;
-	border: 1px solid #E7E7E7;
 }
 
 /* Content */
 
 #content {
 	width: 955px;
+	float:right;
 	background: #FFFFFF;
-	margin: 11px 0px 0px 0px;
-	padding: 0px 0px 0px 5px;
-	float:left;
-	min-height: 420px;
-    height: auto !important;
-    /*height: 400px;*/
+	padding-top: 20px;
+	height: auto !important;
 }
 
 .post {
@@ -257,7 +197,7 @@ img.right {
 
 .login {
 	width: 300px;
-	margin: 50px 0px 0px 200px
+	margin-left: 120px;
 }
 
 .error_message {
