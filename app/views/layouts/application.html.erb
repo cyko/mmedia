@@ -39,8 +39,9 @@
 				</ul>
 				</li>
 			</ul>
+			<%= show_to :administrator, :project_leader do %>
 			<ul>	
-				<%= show_to :administrator, :project_leader do %>
+				
 				<li>
 				<h2>Administrar</h2>
 				<ul>
@@ -50,8 +51,9 @@
 					<% end %>
 				</ul>
 				</li>
- 				<% end %>
+ 				
             </ul>
+			<% end %>
 			<%end%>
     </div>
 
