@@ -39,7 +39,7 @@
 					<li><%= link_to "Cambiar contraseña", change_pass_account_path, :remote=>true %></li>
 				</ul>
 				</li>
-
+				<%if current_user.has_role?(:administrator) || current_user.has_role?(:project_leader) %>
 				<li>
 				<h2>Administrar</h2>
 				<ul>
@@ -47,9 +47,15 @@
 					<li><%= link_to "Usuarios", users_path, :remote=>true %></li>
 					<li><%= link_to "Areas", areas_path, :remote=>true %></li>
 					<% end %>
+					<%if current_user.has_role?(:project_leader) %>
+					<li><%= link_to "Areas", index_pl_areas_path, :remote=>true %></li>
+					<li><%= link_to "Planificaciones", plannings_path, :remote=>true %></li>
+					<li><%= link_to "Miembros", members_areas_path, :remote=>true %></li>
+					<li><%= link_to "Tareas", tasks_path, :remote=>true %></li>
+					<% end %>
 				</ul>
 				</li>
- 				
+ 				<%end%>
          
 			</ul>
 			<%end%>
