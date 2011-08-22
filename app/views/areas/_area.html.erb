@@ -1,11 +1,11 @@
-<%if current_user.has_role( :project_leader ) %>
+<%if current_user.has_role?( :project_leader ) %>
   <li>
 <%end%>
 
 
 <%= div_for(area) do %>
 
-  <%if current_user.has_role(:project_leader ) %>
+  <%if current_user.has_role?(:project_leader ) %>
   <%= link_to area.name, edit_area_path(area), :remote => true %>
   <%end%>
 
