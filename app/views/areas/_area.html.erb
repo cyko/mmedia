@@ -1,27 +1,27 @@
-<%= show_to :project_leader do %>
+<%if current_user.has_role( :project_leader ) %>
   <li>
 <%end%>
 
 
 <%= div_for(area) do %>
 
-  <%= show_to :project_leader do %>
+  <%if current_user.has_role(:project_leader ) %>
   <%= link_to area.name, edit_area_path(area), :remote => true %>
   <%end%>
 
-  <%= show_to :administrator do %>
+  <%if current_user.has_role?(:administrator ) %>
 	  <em><%= area.name %></em> 
   	  <%= link_to 'Destroy', area, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
   <% end %>
 
 <% end %>
 
-<%= show_to :project_leader do %>
+<%if current_user.has_role?(:project_leader ) %>
 <ul id="subareas_<%=area.id.to_s%>" >
 	<%= render :partial => "subarea", :collection => area.children %>
 </ul>
 <%end%>
 
-<%= show_to :project_leader do %>
+<%if current_user.has_role?(:project_leader ) %>
   </li>
 <%end%>

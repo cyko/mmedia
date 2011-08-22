@@ -1,36 +1,36 @@
 <div id="content_left">
 
 <h1>
-<%= show_to :administrator do %>
+<%if current_user.has_role?( :administrator ) %>
 Areas del sistema
 <%end%>
-<%= show_to :project_leader do %>
+<%if current_user.has_role?(:project_leader ) %>
 Areas que coordina
 <%end%>
 </h1>
 
-<%= show_to :project_leader do %>
+<%if current_user.has_role?( :project_leader ) %>
 <ul id="navigation">
 <%end%>
 
-<%= show_to :administrator do %>
+<%if current_user.has_role( :administrator ) %>
 <div id="areas">
 <%end%>
 
   <%= render :partial => "area", :collection => @areas %>
 
-<%= show_to :administrator do %>
+<%if current_user.has_role?(:administrator ) %>
 </div>
 <%end%>
 
-<%= show_to :project_leader do %>
+<%if current_user.has_role?(:project_leader ) %>
 </ul>
 <%end%>
 
 </div>
 
 <div id="content_right">
-<%= show_to :administrator do %>
+<%if current_user.has_role?( :administrator ) %>
 	<h1>Agregar nueva area</h1>
 	<div id="errors_list"></div>
 	<%= form_for Area.new, :remote=>true do |f| %>
