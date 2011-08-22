@@ -43,7 +43,7 @@
 				<li>
 				<h2>Administrar</h2>
 				<ul>
-					<%= show_to :administrator do %>
+					<%if current_user.has_role?(:administrator) %>
 					<li><%= link_to "Usuarios", users_path, :remote=>true %></li>
 					<li><%= link_to "Areas", areas_path, :remote=>true %></li>
 					<% end %>
