@@ -30,15 +30,33 @@
 	
 	<div id="sidebar1" class="sidebar">
 			<%if current_user %>
+			<ul>
+				<li>
+				<h2>My account</h2>
 				<ul>
-					<li>
-						<h2>My account</h2>
-						<ul>
-							<li><%= link_to "Datos personales", edit_account_path, :remote=>true %></li>
-							<li><%= link_to "Cambiar contraseña", change_pass_account_path, :remote=>true %></li>
-						</ul>
-					</li>
+					<li><%= link_to "Datos personales", edit_account_path, :remote=>true %></li>
+					<li><%= link_to "Cambiar contraseña", change_pass_account_path, :remote=>true %></li>
 				</ul>
+				</li>
+				
+				<%= show_to :administrator, :project_leader do %>
+				<li>
+				<h2>Administrar</h2>
+				<ul>
+					<%= show_to :administrator do %>
+					<li><%= link_to "Usuarios", users_path, :remote=>true %></li>
+					<li><%= link_to "Areas", areas_path, :remote=>true %></li>
+					<% end %>
+					<%= show_to :project_leader do %>
+					<li><%= link_to "Areas", index_pl_areas_path, :remote=>true %></li>
+					<li><%= link_to "Planificaciones", plannings_path, :remote=>true %></li>
+					<li><%= link_to "Miembros", members_areas_path, :remote=>true %></li>
+					<li><%= link_to "Tareas", tasks_path, :remote=>true %></li>
+					<% end %>
+				</ul>
+				</li>
+ 				<% end %>
+            </ul>
 			<%end%>
     </div>
 
