@@ -47,12 +47,6 @@
 					<li><%= link_to "Usuarios", users_path, :remote=>true %></li>
 					<li><%= link_to "Areas", areas_path, :remote=>true %></li>
 					<% end %>
-					<%= show_to :project_leader do %>
-					<li><%= link_to "Areas", index_pl_areas_path, :remote=>true %></li>
-					<li><%= link_to "Planificaciones", plannings_path, :remote=>true %></li>
-					<li><%= link_to "Miembros", members_areas_path, :remote=>true %></li>
-					<li><%= link_to "Tareas", tasks_path, :remote=>true %></li>
-					<% end %>
 				</ul>
 				</li>
  				<% end %>
