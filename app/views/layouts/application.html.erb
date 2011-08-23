@@ -76,9 +76,9 @@
 		<% end %>
 		<%= yield  %>
    	</div>
-    
+	<%= render :partial => "layouts/footer", :object => current_user %>    
 </div>
-<%= render :partial => "layouts/footer", :object => current_user %>
+
 
 </body>
 </html>
