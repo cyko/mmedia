@@ -56,7 +56,7 @@ class TasksController < ApplicationController
           if user.has_role?(:member, @planning.area)
             user.has_role!(:development, @task)            
           else
-            @errors = @errors.concat([user.login + " is´t member of " + @planning.area.name] + ".")          
+            @errors = @errors.concat([user.login + " is´t member of " + @planning.area.name + " ."])          
           end
     end
 
