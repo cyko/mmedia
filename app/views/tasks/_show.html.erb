@@ -2,7 +2,7 @@
 
 <div id="errors_list"></div>
 <%= form_for @task, :remote=>true do |f| %>
-  		<%= render :partial => "form_member", :object => f %>
+  		<%= render :partial => "form", :object => f %>
 		</br>
   		<%= f.submit "Guardar cambios" %>
 <% end %>
