@@ -9,7 +9,7 @@
 
 <%else %>
 
-	<%= show_to :development, :of => task do %>
+	<%if current_user.has_role?(:development, task)  %>
 	<li>
 	<%= div_for(task) do %>
 	<%= link_to task.name, task, :remote => true %>
