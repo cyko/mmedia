@@ -19,7 +19,7 @@ module TasksHelper
  tenga tareas para desarrollas y para coordinar y ambar tareas se muestran en diferentes links.
 =end  
   def task_for_project_leaders
-    return @_action_name == "index" || @_action_name == "edit" || @_action_name == "new"
+    return @_action_name == "index" || @_action_name == "edit" || @_action_name == "new" || @_action_name == "create"
   end
   
 end
