@@ -132,7 +132,7 @@ img.right {
 #page {
 	/*width: 1200px;*/
 	background: #FFFFFF;
-	min-height: 400px;
+	min-height: 445px;
     height: auto !important;
 }
 
@@ -143,7 +143,9 @@ img.right {
 	float:right;
 	background: #FFFFFF;
 	padding-top: 20px;
-	height: auto !important;
+	min-height: 425px;
+    height: auto !important;
+	
 }
 
 .post {
@@ -220,7 +222,9 @@ img.right {
 /* Sidebars */
 
 #sidebar1 {
-	
+	float: left;
+	min-height: 425px;
+    height: auto !important;
 }
 
 .sidebar {
