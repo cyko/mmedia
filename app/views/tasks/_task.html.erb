@@ -1,4 +1,4 @@
-<% if task_for_project_leaders  %>
+<%if task_for_project_leaders  %>
 
 	<li>
 	<%= div_for(task) do %>
@@ -7,7 +7,7 @@
 	<% end %> 
 	</li>
 
-<% else %>
+<%else %>
 
 	<%= show_to :development, :of => task do %>
 	<li>
