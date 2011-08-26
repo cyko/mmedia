@@ -1,9 +1,15 @@
 <%= div_for(user) do %>
-  <em><%= user.login %></em> 
+<table>
+<tr>
+  <th><em><%= user.login %></em> </th>
   <%if current_user.has_role?(:administrator) && !user.has_role?(:administrator) %>
-  <%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+  <td><%= button_to 'Destroy', user, :confirm => 'Are you sure?',
+          :method => "delete", :remote => true, :class=>'delete_button'  %></td>
   <% end %>
   <%if current_user.has_role?(:project_leader)%>
-  <%= link_to 'Desvincular', { :controller => 'areas', :action => 'remove_members', :id => area.id, :user_id => user.id }, :confirm => 'Are you sure?', :remote=>true %>
+  <td><%= button_to 'Desvicular', { :controller => 'areas', :action => 'remove_members', :id => area.id, :user_id => user.id }, :confirm => 'Are you sure?',
+           :remote => true, :class=>'delete_button'  %></td>
   <% end %>
+
+</tr></table>
 <% end %>

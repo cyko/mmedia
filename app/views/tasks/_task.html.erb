@@ -2,8 +2,12 @@
 
 	<li>
 	<%= div_for(task) do %>
-	<%= link_to task.name, edit_task_path(task), :remote => true %>
-	<%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+	<table>
+	<tr>
+	<th><%= link_to task.name, edit_task_path(task), :remote => true %></th>
+	<td><%= button_to 'Destroy', task, :confirm => 'Are you sure?',
+          :method => "delete", :remote => true, :class=>'delete_button'  %></td>
+	</tr></table>
 	<% end %> 
 	</li>
 

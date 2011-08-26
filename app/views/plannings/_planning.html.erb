@@ -1,6 +1,10 @@
 <li>
 <%= div_for(planning) do %>
-<%= link_to planning.name, edit_planning_path(planning), :remote => true %>
-<%= link_to 'Destroy', planning, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+<table>
+<tr>
+<th><%= link_to planning.name, edit_planning_path(planning), :remote => true %></th>
+<td><%= button_to 'Destroy', planning, :confirm => 'Are you sure?',
+          :method => "delete", :remote => true, :class=>'delete_button'  %></td>
+</tr></table>
 <% end %> 
 </li>

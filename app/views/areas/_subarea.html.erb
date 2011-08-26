@@ -1,7 +1,11 @@
 <li>
 <%= div_for(subarea) do %>
-<%= link_to subarea.name, edit_area_path(subarea), :remote => true %>
-<%= link_to 'Destroy', subarea, :confirm => 'Are you sure?', :method => :delete, :remote=>true %>
+<table>
+<tr>
+<th><%= link_to subarea.name, edit_area_path(subarea), :remote => true %></th>
+<td><%= button_to 'Destroy', area_path(subarea), :confirm => 'Are you sure?',
+          :method => "delete", :remote => true, :class=>'delete_button'  %></td>
+</tr></table>
 <% end %> 
 </li>
 

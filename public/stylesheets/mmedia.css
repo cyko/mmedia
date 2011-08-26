@@ -346,3 +346,11 @@ img.right {
 .normal {
 	background-color: #FFFFFF;
 }
+.delete_button{
+   font-size:9px;
+   width:55px;
+   height:17px;
+   background-color:#FFFFFF;
+   border-style:solid;
+   border-color:#FFFFFF;
+}
