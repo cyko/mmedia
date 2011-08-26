@@ -19,11 +19,14 @@
 	</div>
 	<div id="menu">
 		<ul>
+			
 			<% if current_user %>
 			<li>
 				<%= link_to "Cerrar sesión " + current_user.login , user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
 			</li>
 			<%end%>
+			<%=link_to "Código fuente", "https://github.com/cyko/mmedia"%>
+			<%=link_to "Guía de uso", "https://github.com/cyko/mmedia"%>
 		</ul>
 	</div>
 <div id="page">

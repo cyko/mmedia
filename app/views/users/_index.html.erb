@@ -13,6 +13,7 @@
 <div id="content_right">
 	<h1>Agregar nuevo usuario</h1>
 	<div id="errors_list"></div>
+	</br></br>
 	<%= form_for User.new, :remote=>true do |f| %>
   		<%= render :partial => "users/form", :object => f %>
   		<%= f.submit "Agregar usuario" %>

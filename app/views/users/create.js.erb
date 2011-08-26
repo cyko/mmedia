@@ -1,5 +1,6 @@
 $('#errors_list').empty();
 <% if @user.valid? %>
+    $('#errors_list').html("<%= escape_javascript( " El usuario se creó correctamente. Se envió un mail a la dirección de correo electrónico indicada avisando al usuario su password." )%>");
 	$('#users').append("<%= escape_javascript(render @user) %>"); // Insert the _user partial at the bottom of the users list
 	$('#user_login').val(""); // Clear the form login text field
 	$('#user_email').val(""); // Clear the form email text field
