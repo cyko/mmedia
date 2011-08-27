@@ -1,5 +1,7 @@
 Mmedia::Application.routes.draw do
   
+  get 'application/guia_de_uso'
+  
   resources :tasks do
     collection do
       get :index_member
