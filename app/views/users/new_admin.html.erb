@@ -2,7 +2,7 @@
 
 <% form_for @user, :url => create_admin_account_path do |f| %>
   
-  <%= render :partial => "layouts/error_list", :collection => @user_session.errors.full_messages %>
+  <%= render :partial => "layouts/error_list", :collection => @user.errors.full_messages %>
 
   <%= render :partial => "users/form", :object => f %>
   <%= f.submit "Register" %>

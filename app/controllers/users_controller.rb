@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Admin user registered!"
       redirect_back_or_default account_url
     else
-      render "user_sessions/new"
+      render "users/new_admin"
     end
   end
   
