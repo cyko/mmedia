@@ -7,6 +7,8 @@ gem 'rails', '3.0.6'
 
 gem 'sqlite3'
 
+gem 'mysql'
+
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 
 gem 'acl9'
@@ -20,6 +22,8 @@ gem 'nested_form'
 gem "win32-clipboard", "~> 0.5.2"
 # Use unicorn as the web server
 # gem 'unicorn'
+
+
 
 # Deploy with Capistrano
 gem 'capistrano'
